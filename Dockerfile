@@ -2,6 +2,9 @@ FROM alpine:3.6
 
 MAINTAINER andre@jeanmaire.nl
 
+# User data directory, contains flows, config and nodes.
+RUN mkdir /data
+
 RUN apk update
 RUN apk add python2 py-pip nodejs nodejs-npm
 
@@ -12,6 +15,7 @@ COPY opc/* /opc/
 
 RUN npm install -g --unsafe-perm node-red
 
+VOLUME ["/data"]
 EXPOSE 1880
 
-ENTRYPOINT node-red
+ENTRYPOINT node-red --userDir /data
