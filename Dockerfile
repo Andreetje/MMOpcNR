@@ -16,6 +16,6 @@ COPY opc/* /opc/
 RUN npm install -g --unsafe-perm node-red
 
 VOLUME ["/data"]
-#EXPOSE 1880
+#EXPOSE 1880 
 
 ENTRYPOINT node-red --userDir /data
