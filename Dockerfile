@@ -14,8 +14,6 @@ RUN mkdir /opc
 COPY opc/* /opc/
 
 RUN npm install -g --unsafe-perm node-red
-RUN cd /data
-RUN npm install node-red-contrib-opcua
 
 VOLUME ["/data"]
 #EXPOSE 1880
