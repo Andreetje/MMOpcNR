@@ -6,7 +6,7 @@ MAINTAINER andre@jeanmaire.nl
 RUN mkdir /data
 
 RUN apk update
-RUN apk add python2 py-pip nodejs nodejs-npm
+RUN apk add openssl python2 py-pip nodejs nodejs-npm
 
 RUN pip install pyro
 
@@ -14,8 +14,9 @@ RUN mkdir /opc
 COPY opc/* /opc/
 
 RUN npm install -g --unsafe-perm node-red
+RUN npm install node-red-contrib-opcua
 
 VOLUME ["/data"]
-EXPOSE 1880
+#EXPOSE 1880
 
 ENTRYPOINT node-red --userDir /data
