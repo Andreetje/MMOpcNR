@@ -1,5 +1,4 @@
 FROM alpine:3.8
-ADD VERSION .
 MAINTAINER andre@jeanmaire.nl
 
 # User data directory, contains flows, config and nodes.
