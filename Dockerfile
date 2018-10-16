@@ -8,6 +8,7 @@ RUN apk update
 RUN apk add openssl python2 py-pip nodejs nodejs-npm
 
 RUN pip install pyro
+RUN pip install --upgrade pip
 
 RUN mkdir /opc
 COPY opc/* /opc/
